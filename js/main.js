@@ -17,6 +17,7 @@ const choicesEl = document.querySelector('.choices');
 const allSelectionsEl = document.querySelectorAll('.selection');
 const submitEl = document.getElementById('submit');
 const replayEl = document.getElementById('replay');
+const prevEl = document.querySelector('.prev');
 
 /*----- event listeners -----*/
 submitEl.addEventListener('click', handleSubmitClick);
@@ -58,6 +59,7 @@ function handleSubmitClick(e) {
     if (selectEl.id === `${correctChoice}`) {
         correct = ++correct;
     }
+    renderPrevQuestion(selectEl.id === `${correctChoice}`, questions[stage]);
     beginNewRound();
     render();
 }
@@ -94,6 +96,17 @@ function renderChoices() {
         label.textContent = ch;
         choicesEl.append(input, label);
     });
+}
+
+function renderPrevQuestion(correct, question) {
+    prevEl.innerHTML = '';
+    const prev = document.createElement('h5');
+    prev.textContent = `${
+        correct
+            ? 'Correct!'
+            : 'Incorrect! The correct answer was: ' + question.correct
+    }`;
+    prevEl.append(prev);
 }
 
 /*----- helpers  -----*/
