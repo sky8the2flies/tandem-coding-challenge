@@ -25,7 +25,7 @@ replayEl.addEventListener('click', handleReplayClick);
 /*----- functions -----*/
 async function init() {
     const data = await fetch(
-        '../Apprentice_TandemFor400_Data.json'
+        'https://sky8the2flies.github.io/tandem-coding-challenge/Apprentice_TandemFor400_Data.json'
     ).then((res) => res.json());
     questions = [];
     stage = -1;
