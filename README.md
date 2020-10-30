@@ -8,7 +8,8 @@
 ### Getting Started
 
 To run this application, simply click the link below and you're all set.
-[Tandem Coding Challenge Application](https://sky8the2flies.github.io/tandem-coding-challenge/)
+
+-   [Tandem Coding Challenge Application](https://sky8the2flies.github.io/tandem-coding-challenge/)
 
 #### Application Requirements
 
