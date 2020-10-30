@@ -32,9 +32,7 @@ async function init() {
     correct = 0;
     const dataCopy = [...data];
     for (let i = 0; i < QUESTION_QTY; i++) {
-        questions.push(
-            dataCopy.splice(getRandom(0, dataCopy.length - 1), 1)[0]
-        );
+        questions.push(dataCopy.splice(getRandom(0, dataCopy.length), 1)[0]);
     }
     beginNewRound();
     render();
@@ -48,7 +46,7 @@ function beginNewRound() {
     }
     const curQuestion = questions[stage];
     const choicesCopy = [...curQuestion.incorrect];
-    const random = getRandom(0, curQuestion.incorrect.length - 1);
+    const random = getRandom(0, curQuestion.incorrect.length);
     correctChoice = random;
     choicesCopy.splice(random, 0, curQuestion.correct);
     choices = choicesCopy;
